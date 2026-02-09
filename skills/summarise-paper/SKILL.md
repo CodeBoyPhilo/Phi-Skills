@@ -14,10 +14,11 @@ description: "Use when tasks involve reading and summarising an academic paper f
    1. Use `pdftoppm` to convert the PDF into PNG images. Save them under `.cache/{paper name}/` as `[1,2,3,...].png`.
    2. Read the converted images.
    3. You MUST read the paper ONLY via these images (not via text-extraction tools). Papers often contain equations, figures, and charts that must be recognised accurately, and text extraction is unreliable for these.
-3. If the input is an arXiv URL (e.g. `https://arxiv.org/abs/2601.07372`):
-   1. Download the source as a local `.tar.gz` archive and store it under `.cache/downloads/{paper name}/`.
-   2. Unpack the archive into `.cache/{paper name}/`.
-   3. Locate the entry point (e.g. `main.tex`) and read all relevant contents, including referenced figures.
+3. If the input is an arXiv URL (e.g. `https://www.arxiv.org/abs/2601.07372`):
+   1. Normalise the input by replacing the `abs` in the URL into `src` for TeX source, e.g.: `https://www.arxiv.org/src/2601.07372`.
+   2. Download the source as a local `.tar.gz` archive and store it under `.cache/downloads/{paper name}/`.
+   3. Unpack the archive into `.cache/{paper name}/`.
+   4. Locate the entry point (e.g. `main.tex`) and read all relevant contents, including referenced figures.
 4. Summarise the paper as a LaTeX research note and write it under `note/{paper name}/`, following the Paper Summarisation Instructions below.
 5. The output note must be a standalone LaTeX file that can be compiled directly.
 
